@@ -1,52 +1,11 @@
-// var alumnos = [];
-// axios({
-//     url: 'http://api-graficos/api/alumnos', //Endpoint
-//     method: 'GET',  //Método
-//     timeout: 3000,  //Tiempo máximo de espera
-//     responseType: 'json',  //Tipo de respuesta (Por defecto es JSON)
-// }).then(function (response) {
-//     Si todo OK te imprime la respuesta
-//     alumnos = response.data;
-//     console.log(response.data); //Datos de la respuesta
-//     console.log(response.status); //Estatus
-//     console.log(response.statusText); //Mensaje del estatus
-//     console.log(response.headers); // Encabezados
-// }).catch(function (error) {
-//     //Si hay error el catch lo imprime
-//     console.log(error.response); //Objeto respuesta
-//     console.log(error.response.data); // Respuesta del servidor
-//     console.log(error.response.status); //Código de error
-//     console.log(error.response.statusText); //Mensaje del error
-//
-// });
-// console.log(alumnos)
-
-
-
 // cargar la api de visualización
 google.charts.load('current', {packages: ['corechart', 'bar', 'line']});
+
 // Establecer una devolución de llamada para que se ejecute cuando se carga la API de visualización de Google.
 google.charts.setOnLoadCallback(drawChartPie);
 google.charts.setOnLoadCallback(drawMultSeriesBar);
 google.charts.setOnLoadCallback(drawChartLine);
 
-
-
-// function drawChart() {
-// var alumnos = [];
-// var url = 'http://api-graficos/api/alumnos';
-// fetch(url)
-//     .then(function (response) {
-//         return response.json();
-//     })
-//     .then(function (data) {
-//         alumnos = data;
-//         // console.log('data = ', alumnos);
-//     })
-//     .catch(function (err) {
-//         console.error(err);
-//     });
-// console.log('data = ', alumnos);
 
 function drawChartPie() {
 // llamar a la función ajax para obtener datos de los alumnos
@@ -58,6 +17,8 @@ function drawChartPie() {
 //     }).responseText;
 //    // El objeto DataTable se utiliza para mantener los datos pasados en una visualización.
 //     var data = new google.visualization.DataTable(jsonData);
+
+
     var data = google.visualization.arrayToDataTable([
         ['Nombre', 'Calificación'],
         ['kelvin',   5],
@@ -73,7 +34,7 @@ function drawChartPie() {
 
       };
     // Para hacer el gráfico circular.
-    var chart = new google.visualization.PieChart(document.getElementById('idpastel'));
+    var chart = new google.visualization.PieChart(document.getElementById('chart_container_pastel'));
 
     chart.draw(data, options);
 }
@@ -100,7 +61,7 @@ function drawMultSeriesBar() {
         }
     };
 
-    var chart = new google.visualization.BarChart(document.getElementById('idbarras'));
+    var chart = new google.visualization.BarChart(document.getElementById('chart_container_barras'));
     chart.draw(data, options);
 }
 
@@ -120,7 +81,7 @@ function drawChartLine() {
         legend: { position: 'bottom' }
     };
 
-    var chart = new google.visualization.LineChart(document.getElementById('idlinea'));
+    var chart = new google.visualization.LineChart(document.getElementById('chart_container_linea'));
 
     chart.draw(data, options);
 }
