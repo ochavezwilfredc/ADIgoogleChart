@@ -1,7 +1,7 @@
 # Aplicaciones de Internet
 ## API de graficos GoogleChart
 * Univercidad Libre Seccional CALI
-* Docente: Moreno Parra Rafael Alberto
+* Docente: Rafael Alberto Moreno Parra 
 * Alumno: Wilfredo Cristóbal Olano Chávez
 
 ![GitHub Logo](/resources/logoUL.png)
