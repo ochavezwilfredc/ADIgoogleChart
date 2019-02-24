@@ -3,26 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Gráficos| google chart</title>
-    <script src="https://www.gstatic.com/charts/loader.js"></script>
-    <!--    Achivo que contiene la hoja de estilos dentro del directorio css-->
-    <link rel="stylesheet" href="css/estilos.css">
+    
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <!-- librería que permite agregar interactividad con el DOM -->
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    
+    <!--Framework de diseño web -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
+    <!--    Achivo que contiene la hoja de estilos dentro del directorio css-->
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
-    <!--Etiqueta div que contendra el gráfico -->
-    <!--<div id="chart_wrap_pastel">-->
-        <!--<div id="chart_container_pastel"></div>-->
-    <!--</div>-->
-
-    <!--<div id="chart_wrap_barras">-->
-        <!--<div id="chart_container_barras"></div>-->
-    <!--</div>-->
-    <!---->
-    <!--<div id="chart_wrap_linea">-->
-        <!--<div id="chart_container_linea"></div>-->
-    <!--</div>-->
-
     <div class="row">
         <div class="col-md-12 text-center">
             <h1>Unilibre Google charts</h1>
@@ -34,26 +27,25 @@
 
         <div class="clearfix"></div>
 
-
         <div class="col-md-6">
-            <div id="chart_container_pastel" class="chart"></div>
+            <div id="container_pastel" class="chart"></div>
         </div>
         <div class="col-md-6">
-            <div id="chart_container_barras" class="chart"></div>
+            <div id="container_barras" class="chart"></div>
         </div>
-
     </div>
 
     <div class="row">
         <div class="col-md-6">
-            <div id="chart_container_linea" class="chart"></div>
+            <div id="container_linea" class="chart"></div>
+        </div>
+        <div class="col-md-6">
+            <div id="container_pasteldim" class="chart"></div>
         </div>
     </div>
 
-
+    <!-- Se carga el archivo graficos.js al final para asegurarnos que las
+     librerias ya estan cargadas -->
     <script type="text/javascript" src="js/graficos.js"></script>
 </body>
-<footer>
-    <!--Pie de página terminos y ocndiciones-->
-</footer>
 </html>
