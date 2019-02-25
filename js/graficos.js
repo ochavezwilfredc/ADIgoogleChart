@@ -87,9 +87,7 @@ function drawChartLine() {
         },
         vAxis: {
             title: 'Temperatura'
-        },
-        'width': 550,
-        'height': 400
+        }
     };
 
     // Crea una instancia y dibuja el gráfico.
@@ -98,27 +96,23 @@ function drawChartLine() {
 }
 
 function drawChartPieDinamico() {
-    // llamar a la función ajax para obtener datos de los alumnos
+    // call ajax function to get sports data
     var jsonData = $.ajax({
-        url: "getData.php",
+        url: "resources/getData.php",
         dataType: "json",
         async: false
     }).responseText;
-
-    // El objeto DataTable se utiliza para mantener los datos pasados
-    // en una visualización y dibujar el gráfico
+    //The DataTable object is used to hold the data passed into a visualization.
     var data = new google.visualization.DataTable(jsonData);
-
+ 
     // Configuración JSON para personalizar el gráfico
     var options = {
         title: 'Calificaciones (PHP&MySQL)',
         is3D: true,
 
     };
-
     // Intancia para visualizalizar el gráfico
     var chart = new google.visualization.PieChart(document.getElementById('container_pasteldim'));
-
     chart.draw(data, options);
 }
 
