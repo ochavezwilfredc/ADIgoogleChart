@@ -18,3 +18,5 @@
 4. Documentar como usar la librería o framework para visualizar los gráficos estadísticos.
 
 5. La librería debe mostrar mínimo las siguientes funcionalidades: Gráfico de pastel, gráfico de barras y gráfico lineal.
+
+6. Prueba de adaptabilidad de los gráficos generedados.    
